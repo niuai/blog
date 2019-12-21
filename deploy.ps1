@@ -1,5 +1,3 @@
-#!/usr/bin/env sh
-
 npm run docs:build
 
 Set-Location docs/.vuepress/dist

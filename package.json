@@ -6,7 +6,7 @@
   "scripts": {
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "deploy": "bash deploy.ps1"
+    "deploy": "powershell ./deploy.ps1"
   },
   "keywords": [],
   "author": "niuai",
