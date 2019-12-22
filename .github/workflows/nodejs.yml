@@ -13,14 +13,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Commit to repository
-      env:
-        GITHUB_TOKEN: ${{ secrets.github_actions }}
-        COMMIT_MSG: |
-          "deploy niuai-docs"
-          skip-checks: true
-      run: |
-        git --version
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
@@ -30,5 +22,17 @@ jobs:
         npm ci
         npm run docs:build
         npm test
+    - name: Commit to repository
+      env:
+        GITHUB_TOKEN: ${{ secrets.github_actions }}
+        COMMIT_MSG: |
+          "deploy niuai-docs"
+          skip-checks: true
+      run: |
+        cd docs/.vuepress/dist
+        git init
+        git add -A
+        git commit -m 'deploy niuai-docs'
+        git push -f git@github.com:niuai/blog.git master:gh-pages
       env:
         CI: true
