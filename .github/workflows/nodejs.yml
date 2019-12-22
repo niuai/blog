@@ -4,7 +4,6 @@ on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -30,9 +29,6 @@ jobs:
         git init
         git add -A
         git commit -m 'deploy niuai-docs'
-        git push -f https://x-access-token:${GITHUB_TOKEN}@github.com/niuai/blog.git master:gh-pages
+        git push -f https://x-access-token:${{ secrets.github_actions }}@github.com/niuai/blog.git master:gh-pages
       env:
         CI: true
-        GITHUB_TOKEN: ${{ secrets.github_actions }}
-        COMMIT_MSG: |
-          "deploy niuai-docs"
