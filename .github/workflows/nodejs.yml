@@ -17,8 +17,6 @@ jobs:
       uses: ad-m/github-push-action@master
       with:
         github_token: '${{ secrets.github_actions }}'
-      run: |
-        git --version
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
