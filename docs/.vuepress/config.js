@@ -6,7 +6,7 @@ const fs = require('fs')
  * @param {*} startPath 起始目录文件夹路径
  * @returns {Array}
  */
-function findSync(startPath) {
+function findDoc(startPath) {
     let result = []
     function finder(innerPath) {
         fs.readdirSync(innerPath).forEach((file, index) => {
@@ -14,14 +14,14 @@ function findSync(startPath) {
             let stats = fs.statSync(fPath)
 
             if (stats.isDirectory()) finder(fPath)
-            if (stats.isFile()) result.push(fPath)
+            if (stats.isFile() && fPath.endsWith('.md')) result.push(fPath)
         })
     }
     finder(startPath)
     return result
 }
 
-let docs = findSync(path.resolve(__dirname + '/../niuai-docs/'))
+let docs = findDoc(path.resolve(__dirname + '/../niuai-docs/'))
     .filter(filePath => !filePath.endsWith('README.md'))
     .map(filePath => filePath.substring(filePath.indexOf('niuai-docs') - 1).replace(/\\/g, '/'))
 
