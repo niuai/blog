@@ -23,11 +23,6 @@ jobs:
         npm run docs:build
         npm test
     - name: Commit to repository
-      env:
-        GITHUB_TOKEN: ${{ secrets.github_actions }}
-        COMMIT_MSG: |
-          "deploy niuai-docs"
-          skip-checks: true
       run: |
         cd docs/.vuepress/dist
         git init
@@ -36,3 +31,6 @@ jobs:
         git push -f git@github.com:niuai/blog.git master:gh-pages
       env:
         CI: true
+        GITHUB_TOKEN: ${{ secrets.github_actions }}
+        COMMIT_MSG: |
+          "deploy niuai-docs"
