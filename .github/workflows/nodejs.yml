@@ -25,10 +25,13 @@ jobs:
     - name: Commit to repository
       run: |
         cd docs/.vuepress/dist
+        git config user.email "jiabinzhou@outlook.com"
+        git config user.name "niuai"
         git init
         git add -A
         git commit -m 'deploy niuai-docs'
-        git push -f git@github.com:niuai/blog.git master:gh-pages
+        git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/niuai/blog.git
+        git push -f origin master:gh-pages
       env:
         CI: true
         GITHUB_TOKEN: ${{ secrets.github_actions }}
