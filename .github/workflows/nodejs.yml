@@ -23,6 +23,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: npm install, build, and test
       run: |
+        git --version
         npm ci
         npm run docs:build --if-present
         npm test
