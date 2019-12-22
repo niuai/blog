@@ -25,8 +25,8 @@ jobs:
     - name: Commit to repository
       run: |
         cd docs/.vuepress/dist
-        git config user.email "jiabinzhou@outlook.com"
-        git config user.name "niuai"
+        git config --global user.email "jiabinzhou@outlook.com"
+        git config --global user.name "niuai"
         git init
         git add -A
         git commit -m 'deploy niuai-docs'
