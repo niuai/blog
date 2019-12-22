@@ -42,7 +42,7 @@ module.exports = {
         }
     },
     themeConfig: {
-        logo: '/assets/user-logo.png',
+        logo: '/assets/user-logo.jpg',
         navbar: true,
         sidebar: 'auto',
         search: true,
