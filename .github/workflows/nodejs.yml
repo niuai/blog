@@ -30,8 +30,7 @@ jobs:
         git init
         git add -A
         git commit -m 'deploy niuai-docs'
-        git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/niuai/blog.git
-        git push -f origin master:gh-pages
+        git push -f https://x-access-token:${GITHUB_TOKEN}@github.com/niuai/blog.git master:gh-pages
       env:
         CI: true
         GITHUB_TOKEN: ${{ secrets.github_actions }}
