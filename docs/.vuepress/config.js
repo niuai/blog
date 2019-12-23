@@ -70,7 +70,7 @@ module.exports = {
 function findDoc(startPath) {
     let result = new Array()
     function finder(innerPath) {
-        let folder = innerPath.split('\\').pop()
+        let folder = innerPath.replace(/\\/g, '/').split('/').pop()
         result[folder] = new Array()
 
         fs.readdirSync(innerPath).forEach((file, index) => {
