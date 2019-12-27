@@ -2,18 +2,18 @@
 
 > 本设置针对使用 SpringBoot 的应用程序。
 
-如下图，对于同一个服务可能会有多个实例（默认的实例名为运行的机器名），以下步骤展示如何自定义该值：
+如下图，在 Azure Application Insights Map 中对于同一个微服务可能会有多个实例（默认的实例名为运行的机器名），以下步骤展示如何自定义该值：
 
 ![cloud role instance](./images/cloud-role-instance.png)
 ![telemetry model](./images/telemetry-model.png)
 
-- 添加 telemetry 初始化类
+1. 添加 telemetry 初始化类
 
     > 参考链接：  
     > <https://github.com/microsoft/ApplicationInsights-Java/issues/632>  
     > <https://github.com/Microsoft/ApplicationInsights-Java/blob/master/azure-application-insights-spring-boot-starter/README.md>
 
-    ```java
+    ```java {12}
     package com.example.demo.configuration;
 
     import com.microsoft.applicationinsights.extensibility.TelemetryInitializer;
@@ -30,9 +30,9 @@
     }
     ```
 
-- 在启动类（Application.java）中使用该类
+2. 在启动类（Application.java）中使用该类
 
-    ```java
+    ```java {29}
     package com.example.demo;
 
     import java.util.Arrays;
@@ -66,6 +66,6 @@
     }
     ```
 
-    然后就可以得到自定义的 `cloud role instance` 了，Application Map 里的 Instance 数量就等于 `cloud role instance` 的不同值的所有数量。
+3. 如下图，就可以得到自定义的 `cloud role instance` 了，Application Map 中显示出的 Instance 的数量就等同于 `cloud role instance` 按名称分组的情况。
 
     ![telemetry custom model](./images/telemetry-custom-model.png)
