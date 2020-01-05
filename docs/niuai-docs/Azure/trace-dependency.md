@@ -141,4 +141,4 @@
 
 3. 程序运行一段时间后，就会有 dependency 的数据出现在 App Insights 的 portal 里面了。
 
-    ![依赖日志](./images/app-insights-dependency.png)
+    ![依赖日志](./assets/images/app-insights-dependency.png)

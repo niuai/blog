@@ -4,8 +4,8 @@
 
 如下图，在 Azure Application Insights Map 中对于同一个微服务可能会有多个实例（默认的实例名为运行的机器名），以下步骤展示如何自定义该值：
 
-![cloud role instance](./images/cloud-role-instance.png)
-![telemetry model](./images/telemetry-model.png)
+![cloud role instance](./assets/images/cloud-role-instance.png)
+![telemetry model](./assets/images/telemetry-model.png)
 
 1. 添加 telemetry 初始化类
 
@@ -68,4 +68,4 @@
 
 3. 如下图，就可以得到自定义的 `cloud role instance` 了，Application Map 中显示出的 Instance 的数量就等同于 `cloud role instance` 按名称分组的情况。
 
-    ![telemetry custom model](./images/telemetry-custom-model.png)
+    ![telemetry custom model](./assets/images/telemetry-custom-model.png)

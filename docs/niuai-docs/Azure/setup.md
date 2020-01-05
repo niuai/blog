@@ -6,7 +6,7 @@
 
 1. 浏览到位于 <https://portal.azure.cn/> 的 Azure（中国）门户，定位到 Application Insights，然后单击新建。
 
-  ![导航](./images/navigation.png)
+  ![导航](./assets/images/navigation.png)
 
 2. 在新建资源上，指定以下信息：
     - 选择订阅。
@@ -14,11 +14,11 @@
     - 输入资源名称。
     - 选择资源区域位置。
 
-    ![新建](./images/new-insights.png)
+    ![新建](./assets/images/new-insights.png)
 
 3. 资源创建后，导航到详情页面，可以查询到该 App Insights 的检测密钥。
 
-  ![详情](./images/insights-info.png)
+  ![详情](./assets/images/insights-info.png)
 
 # 将 Spring Boot 应用程序配置为使用 App Insights
 

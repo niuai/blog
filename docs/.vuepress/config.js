@@ -80,7 +80,7 @@ function findDoc(startPath) {
             let fPath = path.join(innerPath, file)
             let stats = fs.statSync(fPath)
 
-            if (stats.isDirectory() && !fPath.endsWith('images')) finder(fPath)
+            if (stats.isDirectory() && !fPath.endsWith('assets')) finder(fPath)
             if (stats.isFile() && fPath.endsWith('.md') && !fPath.endsWith('README.md')) result[folder].push(fPath)
         })
     }
