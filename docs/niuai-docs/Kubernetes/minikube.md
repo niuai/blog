@@ -1,6 +1,6 @@
 # Minikube
 
-# Minikube 安装（Windows 10 Pro + Hyper-V）
+## Minikube 安装（Windows 10 Pro + Hyper-V）
 
 > 自己已安装好 Docker
 
@@ -18,7 +18,7 @@
     ![新建虚拟交换机](./assets/images/new-switch.png)  
     ![配置](./assets/images/config-switch.png)
 
-5. 以管理员身份打开命令行，并键入以下命令来创建基于 Hyper-V 的 Kubernetes 测试环境（如果之前 #4 中的“外部网络”没有选好，敲入命令后可能会一直卡在创建虚拟机的步骤）
+5. 以管理员身份打开命令行，并键入以下命令来创建基于 Hyper-V 的 Kubernetes 测试环境（如果之前 #4 中的“外部网络”没有选好，敲入命令后可能会一直卡在创建虚拟机的步骤，这时就换个“外部网络”试试）
 
     ```powershell
     minikube start --image-mirror-country cn `
