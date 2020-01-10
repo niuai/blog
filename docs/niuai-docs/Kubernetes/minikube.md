@@ -39,3 +39,14 @@
 > 参考文章：  
 > <https://www.cnblogs.com/shanyou/p/8503839.html>  
 > <https://yq.aliyun.com/articles/221687>
+
+## 使用中可能遇到的问题
+
+1. 删除多余的网络连接
+
+    在使用 Minikube 时，Hyper-V 每次的开启、关闭之后，会在 `控制面板 -> 网络和 Internet -> 网络连接` 下面创建很多新的“网络连接”，在该界面下无法直接删除（被禁用），那么该如何卸载他们呢？
+
+    - 通过在“设备管理器”中卸载他们。[相关文档](https://jingyan.baidu.com/article/148a1921a2f6c94d71c3b132.html)
+
+    ![删除现有网络连接](./assets/images/delete-network.png)
+
