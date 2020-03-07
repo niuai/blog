@@ -22,7 +22,7 @@ Azure DevOps 分为托管的 Azure DevOps Service 和服务器部署的 Azure De
 
 ### 2. Azure DevOps Server
 
-官方地址：<https://azure.microsoft.com/en-us/services/devops/server/  >
-> 破解版地址：<https://shareappscrack.com/microsoft-team-foundation-server/?token=66582936>
+官方地址：<https://azure.microsoft.com/en-us/services/devops/server/>
+> *破解版地址：<https://shareappscrack.com/microsoft-team-foundation-server/?token=66582936>*
 
 你可以在自己的Windows10或者Windows Server（推荐）上安装配置他们，如果机器部署在域中，则会自动集成。
