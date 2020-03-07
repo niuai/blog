@@ -16,13 +16,13 @@ Azure DevOps 提供了以下服务来支持团队的运维开发，其几乎涵�
 
 Azure DevOps 分为托管的 Azure DevOps Service 和服务器部署的 Azure DevOps Server。Express版本（能支持5人及以下的成员）是免费的。
 
-### Azure DevOps Service
+### 1. Azure DevOps Service
 
 可以 [注册新账号](https://azure.microsoft.com/en-us/services/devops/?nav=min) 或者用社交账号（比如Github）来登陆。
 
-### Azure DevOps Server
+### 2. Azure DevOps Server
 
-官方地址：https://azure.microsoft.com/en-us/services/devops/server/  
-> 破解版地址：https://shareappscrack.com/microsoft-team-foundation-server/?token=66582936
+官方地址：<https://azure.microsoft.com/en-us/services/devops/server/  >
+> 破解版地址：<https://shareappscrack.com/microsoft-team-foundation-server/?token=66582936>
 
-你可以在自己的Windows10或者Windows Server上安装配置他们，如果机器部署在域中，会自动集成。
+你可以在自己的Windows10或者Windows Server（推荐）上安装配置他们，如果机器部署在域中，则会自动集成。
