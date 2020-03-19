@@ -2,7 +2,8 @@
 
 在将文件上传到GitLab上后，在文件预览、PR中有些文件无法查看，提示 `No preview for this file type`，经查验，发现是编码问题导致的。
 
-> 问题发生于 On-Premiss GitLab
+> 问题发生于 On-Premiss GitLab  
+> 最后发现 GitLab Online 版本（可以在域名后加 `/help` 来查看版本）可以识别这些文件，推测是新版本解决了这个问题
 
 1. GitLab无法识别Unicode的文件（似乎只能识别UTF-8的）
 
