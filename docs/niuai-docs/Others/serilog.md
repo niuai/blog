@@ -1,6 +1,6 @@
 # Serilog 使用
 
-Serilog为 `结构化` 日志，它使得日志更方便的查询。和一些老的日志类库相比（如log4net），在使用Serilog时，你需要做的最大改变就是思考日志事件`[log events]`，而不是日志消息`[log message]`。一条事件`[event]`由以下几个内容组成：
+Serilog 做为 `结构化` 日志，它使得日志信息更加方便查询（不是只有 error message）。和一些老的日志类库相比（如log4net），在使用Serilog时，你需要做的最大改变就是思考日志事件 `[log events]`，而不是日志消息 `[log message]`。一条事件`[event]`由以下几个内容组成：
 
 - 事件发生时的时间戳 `[timestamp]`
 - 描述何时应该捕获事件的级别 `[level]`
@@ -20,6 +20,8 @@ Serilog为 `结构化` 日志，它使得日志更方便的查询。和一些老
     ```
 
     会在日志中添加两个属性 `ItemNumber`、`ItemCount`，并可执行类似查询（不需要正则）：`ItemNumber > 8`
+
+    > 问：这与C#本身的字符串插值语法会不会冲突呢？比如：`$"Hello ${niuai}"`
 
     ```JSON
     {
