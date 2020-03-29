@@ -13,5 +13,5 @@ features:
   details: 以.NET为主的后端技术栈，以及云计算（Azure）、DevOps（CI、Docker、K8S）等相关工具
 - title: 其他新技术
   details: 机器学习、区块链。。。来者不拒
-footer: MIT Licensed | Copyright © 2020-present NIUAI
+footer: MIT Licensed | Copyright © {Current_Date}-Present NIUAI
 ---

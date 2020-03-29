@@ -1,4 +1,4 @@
-name: Node CI
+name: Push to gh-pages(Node CI)
 
 on: [push]
 
@@ -16,6 +16,9 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    - name: update markdown current date
+      run: |
+        sed -i 's/{Current_Date}/(date +%Y)/' docs/README.md
     - name: npm install, build, and test
       run: |
         npm ci
@@ -24,7 +27,7 @@ jobs:
     - name: Commit to repository
       run: |
         cd docs/.vuepress/dist
-        git config --global user.email "jiabinzhou@outlook.com"
+        git config --global user.email "niuai@niuai.com"
         git config --global user.name "niuai"
         git init
         git add -A
