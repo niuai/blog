@@ -2,7 +2,7 @@
 home: true
 heroImage: /assets/user-logo.jpg
 heroText: NIUAI
-tagline: 此人很懒，没有留言。。。
+tagline: 此人很懒，还没有留言。。。
 actionText: 开始围观 →
 actionLink: /guide/
 sidebarDepth: 2
