@@ -21,7 +21,7 @@ module.exports = {
         ['link', { rel: 'icon', href: '/assets/favicon.ico' }]
     ],
     markdown:{
-        lineNumbers: true
+        // lineNumbers: true
     },
     configureWebpack: {
         resolve: {
