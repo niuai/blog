@@ -18,7 +18,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: update markdown current date
       run: |
-        sed -i 's/{Current_Date}/(date +%Y)/' docs/README.md
+        sed -i 's/{Current_Date}/$(date +%Y)/' docs/README.md
     - name: npm install, build, and test
       run: |
         npm ci
