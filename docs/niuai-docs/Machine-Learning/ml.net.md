@@ -32,9 +32,9 @@ Model Builder会根据已有的算法来对选择的模型进行评估，最终�
 
 填入给Model Builder训练数据的时间（10 sec，如果是大一些的数据集，你应该设置一个更大的时间），点击开始训练。以下是训练过程中的指标
 
-    - Status，训练状态，剩余时间，是否完成
-    - Best accuracy，最好的拟合度
-    - 最优算法，原文是 “performed the best”（表现得最好），不知道是不是拟合度最高，或是其他的综合指标
+- Status，训练状态，剩余时间，是否完成
+- Best accuracy，最好的拟合度
+- 最优算法，原文是 “performed the best”（表现得最好），不知道是不是拟合度最高，或是其他的综合指标
 
 点击 `Evaluate` 进入下一步
 
@@ -53,32 +53,34 @@ Model Builder会根据已有的算法来对选择的模型进行评估，最终�
 
 ## 在程序中调用模型
 
-1. 在一开始的控制台应用（不是Model Builder生成的那个）的 `Program.cs`，替换成以下内容：
+在一开始的控制台应用（不是Model Builder生成的那个）的 `Program.cs`，替换成以下内容：
 
-    ```csharp
-    using System;
-    using MyMLAppML.Model;
+```csharp
+using System;
+using MyMLAppML.Model;
 
-    namespace myMLApp
+namespace myMLApp
+{
+    class Program
     {
-        class Program
+        static void Main(string[] args)
         {
-            static void Main(string[] args)
-            {
-                // Add input data
-                var input = new ModelInput();
-                input.SentimentText = "That is rude.";
+            // Add input data
+            var input = new ModelInput();
+            input.SentimentText = "That is rude.";
 
-                // Load model and predict output of sample data
-                ModelOutput result = ConsumeModel.Predict(input);
-                Console.WriteLine($"Text: {input.SentimentText}\nIs Toxic: {result.Prediction}");
-            }
+            // Load model and predict output of sample data
+            ModelOutput result = ConsumeModel.Predict(input);
+            Console.WriteLine($"Text: {input.SentimentText}\nIs Toxic: {result.Prediction}");
         }
     }
-    ```
+}
+```
 
-2. 运行，你就可以看到输出结果了。
+运行，你就可以看到输出结果了。
 
 ## 其他
 
 你现在可以尝试其他的模型，比如价格预测，对应的训练数据集：[Taxi Fare dataset](https://raw.githubusercontent.com/dotnet/machinelearning-samples/master/samples/csharp/getting-started/Regression_TaxiFarePrediction/TaxiFarePrediction/Data/taxi-fare-train.csv)
+
+原文：[ML.NET Tutorial - Get started in 10 minutes](https://dotnet.microsoft.com/learn/ml-dotnet/get-started-tutorial/intro)
