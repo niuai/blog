@@ -2,11 +2,7 @@
 
 > 环境为 Windows 10
 
-1. `Win + R` 打开运行窗口，输入 `regedit` 打开注册表编辑器，找到以下目录（Background 表示点击文件夹里面的空白部分）：
-
-    ```
-    HKEY_CLASSES_ROOT\Directory\Background\shell
-    ```
+1. `Win + R` 打开运行窗口，输入 `regedit` 打开注册表编辑器，找到目录 `HKEY_CLASSES_ROOT\Directory\Background\shell`（Background 表示点击文件夹里面的空白部分）
 
 2. 右键 `shell` 添加项，可以起一个好记的名字，可以在右侧的 `Default` 里面设置右键菜单里显示的名称，也可以添加 `Icon` 字符串值设置图标。
 
