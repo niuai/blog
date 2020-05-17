@@ -6,7 +6,7 @@
 
 1. 下载 Minikube：<https://github.com/kubernetes/minikube/releases>
 
-2. 下载 kubectl（kubernetes 的客户端）：<https://storage.googleapis.com/kubernetes-release/release/v1.9.0/bin/windows/amd64/kubectl.exe>
+2. 下载 kubectl（kubernetes 的客户端）：[Install and Set Up kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 
 3. 将以上两个工具的路径加到环境变量 Path 中
 
@@ -18,11 +18,11 @@
     ![新建虚拟交换机](./assets/images/new-switch.png)  
     ![配置](./assets/images/config-switch.png)
 
-5. 以管理员身份打开命令行，并键入以下命令来创建基于 Hyper-V 的 Kubernetes 测试环境（如果之前 #4 中的“外部网络”没有选好，敲入命令后可能会一直卡在创建虚拟机的步骤，这时就换个“外部网络”试试）
+5. 以 **管理员身份** 打开命令行，并键入以下命令来创建基于 Hyper-V 的 Kubernetes 测试环境（如果之前 #4 中的“外部网络”没有选好，敲入命令后可能会一直卡在创建虚拟机的步骤，这时就换个“外部网络”试试）
 
     ```powershell
     minikube start --image-mirror-country cn `
-        --iso-url=https://kubernetes.oss-cn-hangzhou.aliyuncs.com/minikube/iso/minikube-v1.6.0.iso `
+        --iso-url=https://kubernetes.oss-cn-hangzhou.aliyuncs.com/minikube/iso/minikube-v1.10.0.iso `
         --registry-mirror=https://registry.docker-cn.com `
         --vm-driver="hyperv" `
         --hyperv-virtual-switch="MinikubeSwitch" `
@@ -35,6 +35,14 @@
     - `kubectl cluster-info`：查看 kubernetes 主节点状态
 
     ![管理界面](./assets/images/minikube-dashboard.png)
+
+7. 在不用的时候可以通过运行以下命令来停止、开启 MiniKube
+
+    ```shell
+    minikube stop
+    minikube start
+    minikube delete # 删除 minikube
+    ```
 
 > 参考文章：  
 > <https://www.cnblogs.com/shanyou/p/8503839.html>  
