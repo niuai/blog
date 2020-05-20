@@ -44,15 +44,7 @@ Windows验证，位于 `appsettings.json` 配置文件的根节点的 `Connectio
 {
   "ConnectionStrings": {
     "Default": "Server=localhost\\SQLEXPRESS;Database=NetCoreSample;Trusted_Connection=True;"
-  },
-  "Logging": {
-    "LogLevel": {
-      "Default": "Information",
-      "Microsoft": "Warning",
-      "Microsoft.Hosting.Lifetime": "Information"
-    }
-  },
-  "AllowedHosts": "*"
+  }
 }
 ```
 
