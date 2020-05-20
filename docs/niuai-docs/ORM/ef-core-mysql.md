@@ -11,7 +11,7 @@
 
 ## 创建 DbContext、实体类
 
-参考之前的文档：[EFCore 连 MySQL](./ef-core.md)，需要注意的是，`SampleContext` 只能留有一个带 `DbContextOptionsBuilder` 参数的构造函数（把之前空参数的构造函数删掉）
+参考之前的文档：[EFCore 的简单使用](./ef-core.md)，需要注意的是，`SampleContext` 只能留有一个带 `DbContextOptionsBuilder` 参数的构造函数（把之前空参数的构造函数删掉）
 
 ## 配置连接字符串、注入
 
