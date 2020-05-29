@@ -69,3 +69,13 @@ services.AddDbContext<SampleContext>(options => options.UseSqlServer(Configurati
 ## 使用
 
 在代码中注入 `SampleContext`，就可以对该数据库增删改查了
+
+## 其他
+
+1. 将 Migration 生成SQL脚本而不是直接实施于数据库（在生产环境时，常常并不能直接操作数据库，而是通过CI、CD执行SQL脚本）
+
+    ```shell
+    Script-Migration -From 0
+    ```
+
+    0表示包括所有的迁移，如果是比如 Init，就从 Init 之后的（不包括），也可以用 -To 来获取到哪个
