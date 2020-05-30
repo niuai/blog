@@ -67,7 +67,7 @@ dotnet ./DotNetCore.SubWeb.dll --urls http://0.0.0.0:8080
 
 运行以下命令来验证结果
 
-```cmd
+```shell
 docker build -t example -f Dockerfile .
 docker run -it --name example -p 80:80 -p 8080:8080 example
 ```
