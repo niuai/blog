@@ -21,12 +21,12 @@ public void ConfigureServices(IServiceCollection services)
     {
         configuration.UseRedisStorage("127.0.0.1");
     });
-    services.AddHangfireServer(); // 表示将运行这行代码的实例作为一个Server，来消费信息
 }
 
 public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 {
     app.UseHangfireDashboard();
+    app.UseHangfireServer(); // 表示将运行这行代码的实例作为一个Server，来消费信息。即如果没有这一行该实例只能发任务消息，不能处理任务
 }
 ```
 
