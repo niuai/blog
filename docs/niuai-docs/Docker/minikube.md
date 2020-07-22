@@ -26,7 +26,8 @@
         --registry-mirror=https://registry.docker-cn.com `
         --vm-driver="hyperv" `
         --hyperv-virtual-switch="MinikubeSwitch" `
-        --memory=2048
+        --memory=2048 `
+        --insecure-registry="10.0.0.0/24"   # 允许拉取所有HTTP服务器的镜像
     ```
 
 6. 然后就可以用以下命令来查看安装状态（minikube 命令需要管理员权限）：

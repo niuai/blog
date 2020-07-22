@@ -14,3 +14,11 @@
 
 5. 以交互方式创建容器，并在退出该交互命令窗口后容器自动销毁：
     - `docker run -it --rm -p 8080:8080 -v D:\~temp:/temp php:latest`
+
+## Kubectl 常用命令
+
+1. 获取资源（pod、service、deployment）
+    - `kubectl get [xxx] -n [namespace]`
+
+2. 重启某一个 pod
+    - `kubectl get pod [pod name] -n [namespace] -o yaml | kubectl replace --force -f -`
