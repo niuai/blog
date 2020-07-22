@@ -79,3 +79,57 @@ services.AddDbContext<SampleContext>(options => options.UseSqlServer(Configurati
     ```
 
     0表示包括所有的迁移，如果是比如 Init，就从 Init 之后的（不包括），也可以用 -To 来获取到哪个
+
+2. 值转换（Value Conversions），属性与数据库字段不是完全匹配的时候，而是具有函数关系时
+
+    > 参考：<https://docs.microsoft.com/en-us/ef/core/modeling/value-conversions>
+
+    ```csharp
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder
+            .Entity<Rider>()
+            .Property(e => e.Mount)
+            .HasConversion(
+                v => v.ToString(), // 属性到数据库的映射
+                v => (EquineBeast)Enum.Parse(typeof(EquineBeast), v)); // 数据库到属性的映射
+    }
+    ```
+
+3. 表拆分，如果一个实体的属性太多，想将部分属性聚合成一个新实体属性，但仍想要存在一张表里，就可以用 [Table Splitting](https://docs.microsoft.com/en-us/ef/core/modeling/table-splitting) 来实现
+
+    ```csharp
+    public class Order
+    {
+        public int Id { get; set; }
+        public OrderStatus? Status { get; set; }
+        public DetailedOrder DetailedOrder { get; set; }
+    }
+    ```
+
+    ```csharp
+    public class DetailedOrder
+    {
+        public int Id { get; set; }
+        public OrderStatus? Status { get; set; }
+        public string BillingAddress { get; set; }
+        public string ShippingAddress { get; set; }
+        public byte[] Version { get; set; }
+    }
+    ```
+
+    ```csharp
+    modelBuilder.Entity<DetailedOrder>(dob =>
+    {
+        dob.ToTable("Orders");
+        dob.Property(o => o.Status).HasColumnName("Status");
+    });
+
+    modelBuilder.Entity<Order>(ob =>
+    {
+        ob.ToTable("Orders");
+        ob.Property(o => o.Status).HasColumnName("Status");
+        ob.HasOne(o => o.DetailedOrder).WithOne()
+            .HasForeignKey<DetailedOrder>(o => o.Id);
+    });
+    ```
