@@ -35,3 +35,18 @@ order by
 ```
 
 ![mysql-revert](./assets/images/mysql-antic-revert.png)
+
+## Join Update
+
+```sql
+UPDATE employees
+    LEFT JOIN merits ON employees.performance = merits.performance
+SET
+    employees.salary = salary + salary * 0.015
+WHERE
+    merits.percentage IS NULL;
+```
+
+## 查看MySQL的版本
+
+`select version() from dual`
