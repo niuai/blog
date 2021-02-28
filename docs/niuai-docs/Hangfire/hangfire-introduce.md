@@ -21,12 +21,68 @@ public void ConfigureServices(IServiceCollection services)
     {
         configuration.UseRedisStorage("127.0.0.1");
     });
+    services.AddHangfireServer(); // 表示将运行这行代码的实例作为一个Server，来消费信息。即如果没有这一行该实例只能发任务消息，不能处理任务
 }
 
 public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 {
+    //app.UseHangfireServer(); // 这句也能达到 “services.AddHangfireServer()” 的效果
     app.UseHangfireDashboard();
-    app.UseHangfireServer(); // 表示将运行这行代码的实例作为一个Server，来消费信息。即如果没有这一行该实例只能发任务消息，不能处理任务
+}
+```
+
+> 注意：`services.AddHangfireServer();` 和 `app.UseHangfireDashboard();` 必须要有一个，不然程序会抛异常：JobStorage.Current property value has not been initialized...
+
+官方模板
+
+```csharp
+Sample ASP.NET Core Startup class
+---------------------------------
+
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using Hangfire;
+
+namespace MyWebApplication
+{
+    public class Startup
+    {
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddHangfire(x => x.UseSqlServerStorage("<connection string>"));
+            services.AddHangfireServer();
+        }
+        
+        public void Configure(IApplicationBuilder app)
+        {
+            app.UseHangfireDashboard();
+        }
+    }
+}
+
+
+Sample OWIN Startup class
+-------------------------
+
+using Hangfire;
+using Microsoft.Owin;
+using Owin;
+
+[assembly: OwinStartup(typeof(MyWebApplication.Startup))]
+
+namespace MyWebApplication
+{
+    public class Startup
+    {
+        public void Configuration(IAppBuilder app)
+        {
+            GlobalConfiguration.Configuration
+                .UseSqlServerStorage("<name or connection string>");
+
+            app.UseHangfireDashboard();
+            app.UseHangfireServer();
+        }
+    }
 }
 ```
 
