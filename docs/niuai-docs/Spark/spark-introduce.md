@@ -5,4 +5,4 @@ Apache Spark 是一个快速的, 多用途的集群计算系统。 它提供了 
 ## 参考文档
 
 - [官方文档](http://doc.codingdict.com/spark/1/)
-- [Spark 核心概念RDD](https://www.cnblogs.com/xia520pi/p/8692892.html)
+- [Spark 核心概念 RDD](https://www.cnblogs.com/xia520pi/p/8692892.html)

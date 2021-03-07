@@ -23,7 +23,20 @@
 1. 安装SBT，此处为最新版本 `1.4.7`，自动配置环境变量。配置镜像仓库 `aliyum-maven: https://maven.aliyun.com/repository/central`。
 
 2. 安装 VS Code 插件 `Scala (Metals)`
+    - 不知道是不是网络的原因，sbt 启动、构建十分缓慢（常常挂掉报错）
 
 3. 创建 Spark 应用，点击左侧导航的插件（Scala），创建一个新的 Scala 项目（scala/hello-word.g8），创建完成后，进到项目目录，执行 `sbt` 命令进入 `sbt:hello-world>`，此时就可以编译（compile）、运行（run）项目了
 
 除了 Scala 以外，Spark 还可以用 Java、Python、R 来开发
+
+## IDEA 下开发 Spark（Scala）
+
+1. 环境准备
+
+    - IDEA 最新社区版
+
+    - Scala 插件：<https://plugins.jetbrains.com/plugin/1347-scala>
+
+2. Windows 10 下安装 Hadoop：<https://www.cnblogs.com/yelao/p/12577412.html>，基本流程差不多，将 hadoop 版本替换为自己的版本
+
+3. 创建 Maven 项目，添加 Scala 依赖：<https://www.cnblogs.com/studyNotesSL/p/11377099.html>，本地、集群运行应用
