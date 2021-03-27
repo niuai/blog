@@ -133,3 +133,31 @@ services.AddDbContext<SampleContext>(options => options.UseSqlServer(Configurati
             .HasForeignKey<DetailedOrder>(o => o.Id);
     });
     ```
+
+4. 计算列，如果想将实体的一组字段组合起来存到数据库（并将被组合的字段标为 `NotMapped`），可以通过以下方式实现（`set` 属性是必需的，尽管什么都不做，否则数据库无法生成该属性对应的字段）
+
+    > 注意：自增的整形ID无法映射到该字段之中，估计是因为ID的自增发生在数据库，所以计算列中的ID始终为0
+
+    ```csharp
+    using ConsoleApp.Enums;
+    using System.ComponentModel.DataAnnotations.Schema;
+
+    namespace ConsoleApp.DataAccess.Entities
+    {
+        public class User
+        {
+            public int Id { get; set; }
+
+            public string Name { get; set; }
+
+            [NotMapped]
+            public UserType UserType { get; set; }
+
+            public string DisplayName
+            {
+                get => $"{UserType}-{Id}-{Name}";
+                private set { }
+            }
+        }
+    }
+    ```
