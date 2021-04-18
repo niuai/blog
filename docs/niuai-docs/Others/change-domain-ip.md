@@ -17,4 +17,6 @@
         oSession.bypassGateway = true;                   // Prevent this request from going through an upstream proxy
         oSession["x-overrideHost"] = "202.105.96.196";  // DNS name or IP address of target server
     }
+    // 或者
+    if (oSession.host.toLowerCase() == "webserver:8888") oSession.host = "webserver:80";
     ```
