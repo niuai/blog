@@ -18,6 +18,6 @@
 
     ![abphelper-gui](./assets/images/abphelper-gui.png)
 
-之后，便可得到Solution的代码结构（DDD），下图为non-tiered的解决方案结构
+    之后，便可得到Solution的代码结构（DDD），下图为non-tiered的解决方案结构
 
-![app-solution-structure](./assets/images/vs-app-solution-structure.png)
+    ![app-solution-structure](./assets/images/vs-app-solution-structure.png)
