@@ -3,6 +3,7 @@ const fs = require('fs')
 
 let docGroups = ['']
 let tempDocGroups = findDoc(path.resolve(__dirname + '/../niuai-docs/'))
+
 for (let index in tempDocGroups) {
     if (tempDocGroups[index].length > 0) {
         docGroups.push({
@@ -20,18 +21,6 @@ module.exports = {
     head: [
         ['link', { rel: 'icon', href: '/assets/favicon.ico' }]
     ],
-    markdown:{
-        // lineNumbers: true
-    },
-    configureWebpack: {
-        resolve: {
-            alias: {
-                '@': '../.vuepress',
-                '@assets': './public/assets',
-                '@public': './public',
-            }
-        }
-    },
     themeConfig: {
         logo: '/assets/user-logo.jpg',
         navbar: true,
@@ -44,25 +33,12 @@ module.exports = {
         smoothScroll: true,
         nav: [
             { text: 'Home', link: '/' },
-            { text: 'Guide', link: '/guide/' },
             { text: 'Docs', link: '/niuai-docs/' },
         ],
         sidebar: {
-            '/guide/': [
-                '',
-            ],
             '/niuai-docs/': docGroups,
         }
     },
-    plugins: [
-        '@vuepress/last-updated',
-        '@vuepress/back-to-top',
-        '@vuepress/active-header-links',
-        '@vuepress/google-analytics',
-        { 'ga': 'UA-00000000-0' },
-        '@vuepress/medium-zoom',
-        '@vuepress/nprogress'
-    ]
 }
 
 /**
