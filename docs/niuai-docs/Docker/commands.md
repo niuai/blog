@@ -15,6 +15,9 @@
 5. 以交互方式创建容器，并在退出该交互命令窗口后容器自动销毁：
     - `docker run -it --rm -p 8080:8080 -v D:\~temp:/temp php:latest`
 
+6. 将容器内的文件Copy到宿主机：
+    - `docker cp {contanername}:{path} {path}`（docker cp 容器名:要拷贝的文件在容器里面的路径 要拷贝到宿主机的相应路径）
+
 ## Kubectl 常用命令
 
 1. 获取资源（pod、service、deployment）
